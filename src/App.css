@@ -1,0 +1,346 @@
+:root {
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --primary-light: #c084fc;
+  --secondary: #64748b;
+  --danger: #ef4444;
+  --success: #10b981;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border: #475569;
+  --shadow: rgba(168, 85, 247, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1f3a 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 
+              0 0 0 1px var(--border);
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px var(--shadow);
+}
+
+/* Form Styles */
+form {
+  background: var(--bg-tertiary);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0 8px 30px var(--shadow);
+  border-color: var(--primary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--shadow);
+  background: var(--bg-primary);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--secondary);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Button Styles */
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+}
+
+button.primary:hover {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+}
+
+button.danger:hover {
+  background: #dc2626;
+}
+
+button.secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+button.secondary:hover {
+  background: #475569;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  background: var(--bg-tertiary);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: white;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+tbody tr {
+  transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+  background: var(--bg-secondary);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Link Styles */
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.3s ease;
+  border-left: 4px solid;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert.success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border-left-color: var(--success);
+}
+
+.alert.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-left-color: var(--danger);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Book Details Page */
+.container > div {
+  background: var(--bg-tertiary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.container > div h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.container > div p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.container > div p b {
+  color: var(--primary-light);
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 12px 8px;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
