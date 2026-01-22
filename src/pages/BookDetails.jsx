@@ -8,7 +8,7 @@ export default function BookDetails() {
 
   useEffect(() => {
     getBook(id).then(res => setBook(res.data));
-  }, []);
+  }, [id]);
 
   if (!book) return null;
 
